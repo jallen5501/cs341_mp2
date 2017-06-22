@@ -1,0 +1,441 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd"><html>
+<head>
+<title>CS341 Syllabus</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+</head>
+
+<body bgcolor="FFFFFF" text="000000">
+<center><h1>Fall 2016 CS341 Syllabus</h1></center>
+<hr>
+
+<h2>Course Outcomes:</h2>
+<p>Students successfully completing this course will:
+<ol>
+<li>Understand enough about the Intel processor architecture and instruction set to write a simple C library function in I-386 assembly language; (ABET: b, c)</li>
+<li>Be able to produce an optimized gate level hardware logic schematic from a truth table and/or a Boolean algebra expression with as many as 4 inputs including "don't care" combinations; (ABET: b, c)</li>
+<li>Continue in their professional development to include embedded system SW development techniques and tools - cross compilers, cross assemblers, hardware debug monitors, and diagnostic software. (ABET: h, i)</li>
+</ol>
+
+<h2>Breaking News:</h2>
+
+
+<p><font color="red"><strong>During the first week, please attend your lecture sessions only.  There are no lab sessions.  Starting in the second week, attend both the lecture sessions and your assigned section's lab session according to the schedule below.  </strong></font></p>
+
+<p><strong>You need to "apply" in the CS department Linux Lab S-3-158 to link your existing Linux account to the CS341 homework submission directory and be added to the course mailing list.  The apply process will also allow you to get a new UNIX account.  (For a new UNIX account, you must also show your UMB student ID to one of the operators to get it activated.)</strong></p>
+
+<p>After you have an account, you can login using any Linux system in the Linux/PC lab room with your account ID and the password you selected during the apply process.  You will also be able to login on the PC's in the lab with your Linux account ID and a default password that your instructor will provide to the class. When you are logged in on a PC in the lab or using your own PC, you can use the SSH communication package to remotely login to the Linux system "users.cs.umb.edu".</p>  
+
+<p>Your email address will be your accountname@cs.umb.edu and it will be included in the course email broadcast list.  You are responsible for receiving any email the grader or I broadcast to the list.  You will need to be able to use your Linux account for two things.  Follow these instructions: <a href="UNIX Intro.html">Introduction to Linux Use</a></p>
+
+<p>Since I am retired and only teaching part time now, I don't have a permanent office.  This semester I will be holding my office hours in TBD.  There may be some times that office is unavailable so check my home page for each week's office hours schedule.</p>
+
+<h2>Course Lecture Times - All Sections</h2>
+<ul>
+<li>Tues-Thurs 4:00PM-5:15PM  Location: W01-0056</li>
+</ul>
+<h2>Course Lab Times - By Sections</h2>
+<ul>
+<li>Section 1 - Tues 2:00-3:15PM  S-3-028 Lab TA: TBD</li>
+<li>Section 2 - Thurs 2:00-3:15P  S-3-028 Lab TA: TBD</li>
+</ul>
+
+<h2>Course TextBooks</h2>
+<ul>
+<li><i>Professional Assembly Language</i>, Richard Blum, Wrox/Wiley, ISBN 978-0-7645-7901-1, <a href="http://www.wrox.com/WileyCDA/WroxTitle/Professional-Assembly-Language.productCd-0764579010,descCd-ERRATA.html">Author's errata</a></li>
+<li><i>Digital Principles, 3rd Ed.</i>, Roger Tokheim, McGraw Hill</li>
+</ul>
+
+<h2>Secure Shell Software Package</h2>
+<p><A href="SSHSecureShellClient-3.2.9.exe">SSH Communications Software Download</a></p>
+
+<h2>Other Useful References</h2>
+<ul>
+<li><a href="USER GUIDE.doc">User Guide to UNIX Systems, Patrick O'Neil</a></li>
+<li><a href="http://blade75.cs.umb.edu/Resources/FAQs/UMB_CS_FAQs.htm">CS Dept UNIX FAQ's</a></li>
+<li><a href="C-Language.Quick-Reference.pdf">C Language Quick Reference Guide</a></li>
+<li><a href="gdb.pdf">GDB Quick Reference Guide (PDF format)</a></li>
+<li><a href="http://www.arduino.cc">Arduino Website (CS341 Labs)</a></li>
+<li><a href="http://www.cs.umb.edu/ulab">The Microprocessor Lab</a></li>
+<li><a href="./sapc_programming_env.html">SAPC Programming Environment</a></li>
+<li><a href="ASCII%20Code%20Chart.htm">ASCII Code Chart</a></li>
+<li><a href="http://www.karbosguide.com/books/pcarchitecture/start.htm">PC Architecture</a></li>
+<li><a href="http://download.intel.com/design/processor/manuals/253665.pdf">Intel Manuals</a></li>
+<li><a href="http://sources.redhat.com/binutils/docs-2.12/as.info/index.html">Using gas</a></li>
+<li><a href="./i386_Assembly/Instructions.pdf">gas i386 Assembly Language Guide (.pdf)</a></li>
+<li><a href="http://www.swansontec.com/sregisters.html">Selecting Intel Registers</a></li>
+
+<li><a href="http://www.scs.carleton.ca/~sivarama/asm_book_web/student_slides.html">Assembly Language Tutorial</a></li>
+<li><a href="./i386_Assembly/OpcodeTable.pdf">i386 Opcode Table</a></li>
+<li><a href="http://www.allaboutcircuits.com/vol_4/index.html">Digital Logic Reference Website</a></li>
+<li><a href="./SandSExcerpts/SandS.pdf">S &amp S Excerpts (Former CS341 Text Book)</a></li>
+<li><a href="./DataBook/c8652.pdf">National Semiconductor UART Data Sheet</a></li>
+<li><a href="./Intel8259/I8259APIC.pdf">Intel 8259A Programmable Interupt Controller Data Sheet</a></li>
+<li><a href="./Intel8254/I8254PIT.pdf">Intel 8254 Programmable Interval Timer Data Sheet</a></li>
+<li><a href="./DataBook/7400.pdf">7400 Series TTL Logic Data Book</a></li>
+<li><a href="http://teahlab.com">Free Digital Logic Simulator Tool</a></li>
+<li><a href="http://puz.com/sw/karnaugh">Free Karnaugh Map Tool</a></li>
+<li><a href="DMAFundamentals.pdf">DMA Fundamentals on PC Platforms</a></li>
+</ul>
+<hr>
+
+<h2>Class Schedule, Lecture Notes and Homework Assignments</h2>
+
+<table>
+<tr>
+<th width=40 align="left">Class</th>
+<th width=40 align="left">Date</th>
+<th width=120 align="left">Reading</th>
+<th width=100 align="left">Projects</th>
+<th width=450 align="left">Lecture Notes</th>
+<th width=200 align="left">File</th>
+</tr>
+
+<tr valign="top">
+<td>01</td>
+<td>09/06</td>
+<td>PAL 1-3, 6-16</td>
+<td></td>
+<td><a href="Lecture01.pdf">Introduction to Embedded Systems</a></td>
+<td><a href="Lecture01.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>02</td>
+<td>09/08</td>
+<td>PAL 39-59<br>62-65</td>
+<td><a href="unix/mp1/mp1.pdf">MP1</a> Due:<br>before class 06</td>
+<td><a href="Lecture02.pdf">Example of SAPC Code and Introduction to MP1</a></td>
+<td><a href="Lecture02.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>03</td>
+<td>09/13</td>
+<td>PAL 17-32<br>34-37</td>
+<td></td>
+<td><a href="Lecture03.pdf">Intel Architecture Overview - Processor, Memory, I/O</a></td>
+<td><a href="Lecture03.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>04</td>
+<td>09/15</td>
+<td>PAL 119-125<br>161-172</td>
+<td></td>
+<td><a href="Lecture04.pdf">Intel Architecture Overview - Memory Usage</a></td>
+<td><a href="Lecture04.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>05</td>
+<td>09/20</td>
+<td>DP 13-6</td>
+<td></td>
+<td><a href="Lecture05.pdf">Intel Architecture Overview - I/O Devices</a></td>
+<td><a href="Lecture05.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>06</td>
+<td>09/22</td>
+<td>PAL 73-106<br></td>
+<td><a href="unix/mp2/mp2warmup.pdf">MP2 Warmup</a><br><a href="unix/mp2/mp2.html">MP2</a> Due:<br>before class 12</td>
+<td><a href="Lecture06.pdf">Assembly Language Programming, Introduction to MP2</a></td>
+<td><a href="Lecture06.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>07</td>
+<td>09/27</td>
+<td>PAL 201-216<br>297-312</td>
+<td></td>
+<td><a href="Lecture07.pdf">Assembly Language Programming, C Compiler Calling Sequences</a></td>
+<td><a href="Lecture07.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>08</td>
+<td>09/29</td>
+<td>PAL 127-152</td>
+<td></td>
+<td><a href="Lecture08.pdf">Assembly Language Programming, Condition Codes and Jump Instructions</a></td>
+<td><a href="Lecture08.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>09</td>
+<td>10/04</td>
+<td><a href="./SandSExcerpts/SandS.pdf">S & S</a> 647-656<br><a href="./DataBook/c8652.pdf">UART Data Sheet</a></td>
+<td></td>
+<td><a href="Lecture09.pdf">Assembly Language Programming, RS232 and UART Programming</a></td>
+<td><a href="Lecture09.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>10</td>
+<td>10/06</td>
+<td>PAL 216-227</td>
+<td></td>
+<td><a href="Lecture10.pdf">Assembly Language Programming, C Structs and Recursion</a></td>
+<td><a href="Lecture10.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>11</td>
+<td>10/13</td>
+<td>PAL 3-6<br>361-367</td>
+<td></td>
+<td><a href="Lecture11.pdf">In-line Assembly Code, Machine Language Programming</a></td>
+<td><a href="Lecture11.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>12</td>
+<td>10/15</td>
+<td></td>
+<td></td>
+<td><a href="Lecture12.pdf">Study MP2 Solution, Intro. to Arduino Hardware Labs, Review</a></td>
+<td><a href="Lecture12.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>13</td>
+<td>10/18</td>
+<td><a href="exam1.pract.pdf">Practice Exam</a></td>
+<td></td>
+<td><strong>Exam #1: Covers up through Class 12</strong></td>
+<td></td>
+</tr>
+
+<tr valign="top">
+<td>14</td>
+<td>10/20</td>
+<td><a href="./SandSExcerpts/SandS.pdf">S & S</a> 385-393<br><a href="./Intel8259/I8259APIC.pdf">PIC Data Sheet</a></td>
+<td><a href="unix/mp3/mp3.doc">MP3</a> Due:<br>before class 19</td>
+<td><a href="Lecture14.pdf">MP3: Interrupts, Priority Interrupt Controller and Introduction to MP3</a></td>
+<td><a href="Lecture14.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>15</td>
+<td>10/25</td>
+<td><a href="./Intel8254/I8254PIT.pdf">PIT Data Sheet</a></td>
+<td></td>
+<td><a href="Lecture15.pdf">MP3: Programmable Interval Timer, Cache Memory</a></td>
+<td><a href="Lecture15.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>16</td>
+<td>10/27</td>
+<td>DP Ch 3, 4<br>6.1-6.3</td>
+<td></td>
+<td><a href="Lecture16.pdf">Digital Circuits - Boolean Algebra and Basic Logic Gates</a></td>
+<td><a href="Lecture16.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>17</td>
+<td>11/01</td>
+<td>DP Ch 3, 4<br>6.1-6.3</td>
+<td></td>
+<td><a href="Lecture17.pdf">Digital Circuits - Combinational Logic</a></td>
+<td><a href="Lecture17.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>18</td>
+<td>11/03</td>
+<td>DP 9.1-9.6</td>
+<td></td>
+<td><a href="Lecture18.pdf">Digital Circuits - Sequential Logic</a></td>
+<td><a href="Lecture18.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>19</td>
+<td>11/08</td>
+<td><a href="./DataBook/7400.pdf">7400 TTL</a></td>
+<td><a href="unix/mp4/mp4.doc">MP4</a> Due:<br>before class 22</td>
+<td><a href="Lecture19.pdf">Hardware Diagnostic Software and Introduction to MP4</a></td>
+<td><a href="Lecture19.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>20</td>
+<td>11/10</td>
+<td>DP 5.1-5.3<br>5.7-5.8</td>
+<td></td>
+<td><a href="Lecture20.pdf">Digital Circuits - Logic Design, Karnaugh Maps</a></td>
+<td><a href="Lecture20.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>21</td>
+<td>11/15</td>
+<td>DP 5.10, 7.4</td>
+<td></td>
+<td><a href="Lecture21.pdf">Digital Circuits - Seven Segment Display</a></td>
+<td><a href="Lecture21.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>22</td>
+<td>11/17</td>
+<td></td>
+<td><a href="unix/mp5/mp5.doc">MP5</a> Due:<br>before class 27</td>
+<td><a href="Lecture23.pdf">Com Port Driver Software and Introduction to MP5</a></td>
+<td><a href="Lecture23.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>23</td>
+<td>11/22</td>
+<td>DP 12.1-12.4</td>
+<td></td>
+<td><a href="Lecture22.pdf">Memory and Address Decoding</a></td>
+<td><a href="Lecture22.ppt">.ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td></td>
+<td>11/24</td>
+<td></td>
+<td></td>
+<td><strong>Thanksging</strong></td>
+</tr>
+
+<tr valign="top">
+<td>24</td>
+<td>11/29</td>
+<td>DP 13.5</td>
+<td></td>
+<td><a href="Lecture24.pdf">Busses, Tri-State Logic, Direct Memory Access (DMA)</a></td>
+<td><a href="Lecture24.ppt"> .ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>25</td>
+<td>12/01</td>
+<td></td>
+<td></td>
+<td><a href="Lecture25.pdf">Processors - The Big Picture</a></td>
+<td><a href="Lecture25.ppt"> .ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>26</td>
+<td>12/06</td>
+<td></td>
+<td></td>
+<td><a href="Lecture25.pdf">Processors - The Big Picture, Review for Exam</a></td>
+<td><a href="Lecture26.ppt"> .ppt</a></td>
+</tr>
+
+<tr valign="top">
+<td>27</td>
+<td>12/08</td>
+<td><a href="exam2.pract.pdf">Practice Exam</a></td>
+<td></td>
+<td><strong>Exam #2: Covers up through Class 26</strong></td>
+<td></td>
+</tr>
+
+<tr valign="top">
+<td>28</td>
+<td>12/13</td>
+<td><a href="exam3.pract.pdf">Practice Final</a></td>
+<td></td>
+<td><a href="Lecture28.pdf">Course Review and Course Evaluation</a></td>
+<td><a href="Lecture28.ppt"> .ppt</a></td>
+</tr>
+
+</table>
+
+	Final's Week - <strong>Optional Final Exam: Covering the Entire Course</strong>
+	<ul>
+	<li>All Sections: TBD</li>
+	</ul>
+
+<hr>
+
+<h2>Machine Projects</h2>
+
+<p>The assignment for Machine Projects will be posted on the web site, but the rest of the materials 
+required for them are not web accessible.  They must be accessed using UNIX as explained in class.  
+My UNIX home directory for getting machine project materials is ~bobw/cs341.</p>
+<p>After you apply for the course, the operators will create a cs341 soft link in your home
+directory.  That link will point to your subdirectory for doing your homework.  You will create a 
+subdirectory for each machine project and put all of your homework files there. 
+<strong>Do not change the ownership, the group, or the modes on your homework directories.  
+That could prevent me and the graders from reading your files and/or allow other students to 
+read your homework files.  Doing this will be considered a possible infraction of the 
+academic honesty policy.</strong></p>
+
+<p>The project grader is TBD.</p>
+
+<h2>Grades will be based on the following:</h2>
+
+<h3>Lab Assignments - 20%</h3>
+	<ul>
+	<li>Week 09/05 No Labs</li>
+      <li>Week 09/12 <a href="Lab01/index.html">Lab Assignment 1</a> 10 points</li>
+	<li>Week 09/19 <a href="Lab02/index.html">Lab Assignment 2</a> 10 points</li>
+	<li>Week 09/26 <a href="Lab03/index.html">Lab Assignment 3</a> 10 points</li>
+	<li>Week 10/03 <a href="Lab04/index.html">Lab Assignment 4</a> 10 points</li>
+      <li>Week 10/10 <a href="Lab05/index.html">Lab Assignment 5</a> 10 points</li>
+      <li>Week 10/17 No Labs (Exam 1)</li>
+	<li>Week 10/24 <a href="Lab06/index.html">Lab Assignment 6</a> 10 points</li>
+	<li>Week 10/31 <a href="Lab07/index.html">Lab Assignment 7</a> 10 points</li>
+	<li>Week 11/07 <a href="Lab08/index.html">Lab Assignment 8</a> 10 points</li>
+	<li>Week 11/14 <a href="Lab09/index.html">Lab Assignment 9</a> 10 points</li>
+	<li>Week 11/21 No Labs (Thankgiving Holiday)</li>
+	<li>Week 11/28 <a href="Lab10/index.html">Lab Assignment 10</a> 10 points</li>
+	<li>Week 12/05 No Labs (Exam 2)</li>
+
+	<li>Total of 100 points</li>
+	</ul>
+
+<h3>Machine Projects - 40%</h3>
+
+<p>Machine Projects will be C and/or assembly language programming projects.</p>
+	<ul>
+	<li>MP1 - 40 points</li>
+	<li>MP2 - 40 points</li>
+	<li>MP3 - 40 points</li>
+	<li>MP4 - 40 points</li>
+	<li>MP5 - 40 points</li>
+	<li>Total of 200 points</li>
+	</ul>
+
+<h3>Exams - 40%</h3>
+	<ul>
+	<li>Three exams 100 points each - Best 2 out of 3 scores counted</li>
+	<li>The first exam will be graded/returned before the course withdrawal date.</li>
+	<li>If you miss a semester exam, the final is your makeup exam.</li>
+	<li>The final exam is optional if you have taken both exam 1 and exam 2.
+	</ul>
+
+<h3>Course Withdrawal and Pass/Fail Deadline: <strong>Weds, 11/23/2016</strong></h3>
+<p>You will get grades back for one Exam and the first few homework assignments before the Registrar's withdrawal and pass/fail deadline so that you will know where you stand in time to make that decision.</p>
+
+<hr>
+
+<h2>Accomodations:</h2>
+<p>Section 504 of the Americans with Disabilities Act of 1990 offers guidelines for curriculum modifications
+and adaptations for students with documented disabilities. If applicable, students may obtain adaptation
+recommendations from the Ross Center for Disability Services in the Campus Center (617-287-7430). The student
+must present these recommendations and discuss them with each professor within a reasonable period,
+preferably by the end of Drop/Add period.</p>
+
+<h2>Student Conduct:</h2>
+<p>Students are required to adhere to the University Policy on Academic Standards and Cheating, to the
+University Statement on Plagiarism and the Documentation of Written Work, and to the Code of Student
+Conduct as delineated in the catalog of Undergraduate Programs. The Code is also
+available online at: <a href="http://www.umb.edu/life_on_campus/policies/code/">Code of Student Conduct</a></p>
+
+<p><strong><font color="red">In particular, some students have been caught posting their lab/project assignments or solutions on public websites requesting or offering to pay for outside assistance.  This is unauthorized collaboration which is academic dishonesty.  In addition, because it is publicly posted, it allows other students to find their code - enabling them to copy it - which is also academic dishonesty.  I consider any public posting by students of any homework assignments or solutions on the internet to be prima facie evidence of academic dishonesty.  I will identify the students involved and sanction them.</font></strong></p>
+
+</body>
+</html>

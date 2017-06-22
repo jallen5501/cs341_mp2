@@ -1,0 +1,25 @@
+Script started on Thu 13 Oct 2016 02:28:23 PM EDT
+tuser@tutor-vserver:~$ mtip -f strcpy.lnx 
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+~downloading strcpy.lnx
+
+..go 10.0..Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+The strcpy function returned the correct pointer value.
+The strcpy function copied the data correctly.
+The contents of array s are: Hello World
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> 
+Tutor> 
+Quit handler: 
+killing process 2384 Leaving board #1
+tuser@tutor-vserver:~$ clear
+[H[Jtuser@tutor-vserver:~$ exit
+exit
+
+Script done on Thu 13 Oct 2016 02:30:34 PM EDT

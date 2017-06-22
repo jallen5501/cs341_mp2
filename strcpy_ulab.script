@@ -1,0 +1,86 @@
+Script started on Thu Oct 13 12:41:17 2016
+warning: could not update utmp entry
+sh: using dumb terminal settings.
+blade57(1)% pwd
+/courses/cs341/f16/bobw/jmallen/mp2
+blade57(2)% ls -lg
+total 361
+-rw-r--r--   1 jmallen  cs341-1G    13046 Sep 25 17:25 Rubric.docx
+-rw-r--r--   1 jmallen  cs341-1G        0 Oct  7 18:17 Untitled Document
+-rwxr-xr-x   1 jmallen  cs341-1G     8804 Oct 13 03:32 a.out
+-rwxr-xr-x   1 jmallen  cs341-1G     8752 Oct 12 21:14 count
+-rwxr-xr-x   1 jmallen  cs341-1G    26841 Oct 13 12:13 count.lnx
+-rw-r--r--   1 jmallen  cs341-1G     1284 Oct 12 01:44 count.o
+-rw-r--r--   1 jmallen  cs341-1G      189 Oct 13 12:13 count.opc
+-rw-r--r--   1 jmallen  cs341-1G      846 Oct 13 12:11 count.s
+-rw-r--r--   1 jmallen  cs341-1G     4562 Oct 13 12:39 count.script
+-rw-r--r--   1 jmallen  cs341-1G     1770 Oct 13 12:13 count.syms
+-rw-r--r--   1 jmallen  cs341-1G      400 Oct 10 17:15 countc.c
+-rw-r--r--   1 jmallen  cs341-1G     2692 Oct 11 20:33 countc.o
+-rw-r--r--   1 jmallen  cs341-1G     1640 Oct 13 12:08 countc.opc
+-rw-r--r--   1 jmallen  cs341-1G      713 Oct 12 20:59 echoc.c
+-rw-r--r--   1 jmallen  cs341-1G    17305 Sep 25 17:25 index.html
+-rw-r--r--   1 jmallen  cs341-1G     2173 Oct 13 12:18 makefile
+-rw-r--r--   1 jmallen  cs341-1G    75101 Sep 25 17:25 mp2.pdf
+-rw-r--r--   1 jmallen  cs341-1G    92987 Sep 25 17:25 mp2warmup.pdf
+-rwxr-xr-x   1 jmallen  cs341-1G    26824 Oct 13 12:19 printbin.lnx
+-rw-r--r--   1 jmallen  cs341-1G     1460 Oct 12 20:34 printbin.o
+-rw-r--r--   1 jmallen  cs341-1G      296 Oct 13 12:19 printbin.opc
+-rw-r--r--   1 jmallen  cs341-1G     1540 Oct 13 12:14 printbin.s
+-rw-r--r--   1 jmallen  cs341-1G     3288 Oct 13 12:40 printbin.script
+-rw-r--r--   1 jmallen  cs341-1G     1775 Oct 13 12:19 printbin.syms
+-rw-r--r--   1 jmallen  cs341-1G      911 Oct 12 15:25 printbin2.s
+-rw-r--r--   1 jmallen  cs341-1G     1086 Oct 12 19:46 printbin3.s
+-rw-r--r--   1 jmallen  cs341-1G      343 Oct 11 21:35 printbinc.c
+-rw-r--r--   1 jmallen  cs341-1G     2592 Oct 11 23:20 printbinc.o
+-rw-r--r--   1 jmallen  cs341-1G     1502 Oct 13 12:19 printbinc.opc
+-rwxr-xr-x   1 jmallen  cs341-1G    20041 Oct 13 12:19 strcpy.lnx
+-rw-r--r--   1 jmallen  cs341-1G     1224 Oct 13 03:32 strcpy.o
+-rw-r--r--   1 jmallen  cs341-1G      143 Oct 13 12:19 strcpy.opc
+-rw-r--r--   1 jmallen  cs341-1G      492 Oct 13 12:16 strcpy.s
+-rw-r--r--   1 jmallen  cs341-1G     1350 Oct 13 12:19 strcpy.syms
+-rw-r--r--   1 jmallen  cs341-1G      289 Oct 13 01:55 strcpy2.s
+-rw-r--r--   1 jmallen  cs341-1G      633 Oct 13 01:48 strcpyc.c
+-rw-r--r--   1 jmallen  cs341-1G     3096 Oct 13 01:50 strcpyc.o
+-rw-r--r--   1 jmallen  cs341-1G     4082 Oct 13 12:19 strcpyc.opc
+-rw-r--r--   1 jmallen  cs341-1G        0 Oct 13 12:41 strycpy.script
+-rw-r--r--   1 jmallen  cs341-1G      426 Sep 25 17:25 sum10.s
+-rw-r--r--   1 jmallen  cs341-1G     4250 Sep 25 17:25 sum10.script
+-rw-r--r--   1 jmallen  cs341-1G      159 Sep 25 17:25 sum10c.c
+lrwxrwxrwx   1 jmallen  cs341-1G       11 Oct 13 12:19 syms -> strcpy.syms
+-rw-r--r--   1 jmallen  cs341-1G     8192 Oct 13 12:40 typescript
+drwxr-sr-x   2 jmallen  cs341-1G      512 Oct 10 14:08 warmup
+blade57(3)% make A"strcpy"="strcpy"
+make: `strcpy.lnx' is up to date.
+blade57(4)% 
+script done on Thu Oct 13 12:42:08 2016
+# strcpy.s
+	.text
+	.global _mystrcpy
+_mystrcpy:
+	push %ebp
+	mov %esp, %ebp
+	sub $8, %esp
+	movl 8(%ebp), %ecx
+	movl %ecx, -8(%ebp)
+	movl 12(%ebp), %eax
+        movl %eax, -4(%ebp)     # -4(%ebp) holds the pointer to "Hello World"
+	xor %edx, %edx
+	jmp copystr
+
+copystr:
+	movzbl (%eax), %edx	# edx hold the value, "H"
+	movb %dl, (%ecx)
+	testb %dl, %dl
+	je done 
+	addl $1, %eax
+	addl $1, %ecx
+	jmp copystr
+
+done:
+	movl -8(%ebp), %eax
+	mov %ebp, %esp
+        popl %ebp
+        ret 
+        .end 
+If you were to input a string that is longer then 100 char's, the program would crash. I think this is possible because the terminating char may not be present in the returned string, (char *).

@@ -1,0 +1,24 @@
+Script started on Sun 16 Oct 2016 08:00:47 PM EDT
+tuser@tutor-vserver:~$ mtip -f echo.lnx 
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 1 
+~downloading echo.lnx
+.......Done.
+
+Download done, setting EIP to 100100.
+Tutor> go1  100100
+Type escape character and enter
+a
+jripjerioqj
+Escape character typed - exiting.
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> 
+Tutor> 
+Quit handler: 
+killing process 1787 Leaving board #1
+tuser@tutor-vserver:~$ exit
+exit
+
+Script done on Sun 16 Oct 2016 08:01:51 PM EDT

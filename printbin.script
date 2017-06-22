@@ -1,0 +1,146 @@
+Script started on Thu 13 Oct 2016 02:35:21 PM EDT
+jmallen@itserver6:~/cs341/mp2$ gdb printbin
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from printbin...done.
+(gdb) b printbin:36
+Breakpoint 1 at 0x80484cb: file printbin.s, line 9.
+(gdb) q
+jmallen@itserver6:~/cs341/mp2$ clear
+[3;J[H[2Jjmallen@itserver6:~/cs341/mp2$ script printbin.script
+Script started, file is printbin.script
+jmallen@itserver6:~/cs341/mp2$ gdb printbinon[K[K
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from printbin...done.
+(gdb) b print[K[K[K[K[Kper[K[Kroin[K[K[Kintbin.s:36
+Breakpoint 1 at 0x8048515: file printbin.s, line 36.
+(gdb) r
+Starting program: /courses/cs341/f16/bobw/jmallen/mp2/printbin 
+number to print in binary: 
+ab
+
+Breakpoint 1, donibble () at printbin.s:39
+39		movl 8(%ebp), %eax
+(gdb) l
+34	
+35	donibble:
+36		push %ebp
+37	        mov %esp, %ebp
+38		sub $16, %esp
+39		movl 8(%ebp), %eax
+40		xor %eax, %eax
+41		movb %al, -4(%ebp)	# char passed into function
+42		movl $4, -12(%ebp)	# -12(%ebp) holds the counter for the loop
+43		movl $3, -16(%ebp)	# -16(%ebp) hold the number of the right shift
+(gdb) c
+Continuing.
+
+Breakpoint 1, donibble () at printbin.s:39
+39		movl 8(%ebp), %eax
+(gdb) l
+34	
+35	donibble:
+36		push %ebp
+37	        mov %esp, %ebp
+38		sub $16, %esp
+39		movl 8(%ebp), %eax
+40		xor %eax, %eax
+41		movb %al, -4(%ebp)	# char passed into function
+42		movl $4, -12(%ebp)	# -12(%ebp) holds the counter for the loop
+43		movl $3, -16(%ebp)	# -16(%ebp) hold the number of the right shift
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 48482] will be killed.
+
+Quit anyway? (y or n) y
+jmallen@itserver6:~/cs341/mp2$ exit
+exit
+Script done, file is printbin.script
+jmallen@itserver6:~/cs341/mp2$ vi printbin.s
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;45r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[45;1H"printbin.s" 62L, 1538C[>c[1;1H[38;5;130m  1 [m[34m# printbin.s[m
+[38;5;130m  2 [8C.data
+  3 [m[8C[36mresult[m:
+[38;5;130m  4 [16C.ascii[m "[31m0000[m [31m0000[m\0"
+[38;5;130m  5 [8C.text
+  6 [8C.global[m [36mprintbin[m
+[38;5;130m  7 [m[36mprintbin[m:
+[38;5;130m  8 
+  9 [m[8C[36mpush[m %[36mebp[m
+[38;5;130m 10 [m[8C[36mmov[m %[36mesp[m, %[36mebp[m
+[38;5;130m 11 [m[8C[36msub[m $[31m8[m, %[36mesp[m
+[38;5;130m 12 [m[8C[36mmovl[m [31m8[m(%[36mebp[m), %[36meax[m
+[38;5;130m 13 [m[8C[36mmovl[m %[36meax[m, -[31m4[m(%[36mebp[m)     [34m# saving unsigned char in -4(%ebp), users original input[m
+[38;5;130m 14 [m[8C[36mmovl[m $[31m0,[m -[31m8[m(%[36mebp[m)
+[38;5;130m 15 [m[8C[36mmovl[m %[36meax[m, -[31m8[m(%[36mebp[m)
+[38;5;130m 16 [m[8C[36mshrl[m $[31m4[m, -[31m8[m(%[36mebp[m)
+[38;5;130m 17 
+ 18 [m[8C[36mmovl[m $[36mresult[m, %[36medx[m
+[38;5;130m 19 [m[8C[36mcall[m [36mdonibble[m
+[38;5;130m 20 
+ 21 [m[8C[36maddl[m $[31m1[m, %[36medx[m
+[38;5;130m 22 [m[8C[36mmovl[m -[31m4[m(%[36mebp[m), %[36meax[m
+[38;5;130m 23 [m[8C[36mmovl[m %[36meax[m, -[31m8[m(%[36mebp[m)
+[38;5;130m 24 [m[8C[36mcall[m [36mdonibble[m
+[38;5;130m 25 [m[8C[36mmovl[m $[36mresult[m, %[36meax[m
+[38;5;130m 26 [m[8C[36mmov[m %[36mebp[m, %[36mesp[m
+[38;5;130m 27 [m[8C[36mpopl[m %[36mebp[m
+[38;5;130m 28 [m[8C[36mret[m
+[38;5;130m 29 
+ 30 [m[8C[36mmovl[m $[36mresult[m, %[36meax[m
+[38;5;130m 31 [m[8C[36mmov[m %[36mebp[m, %[36mesp[m
+[38;5;130m 32 [m[8C[36mpopl[m %[36mebp[m
+[38;5;130m 33 [m[8C[36mret[m
+[38;5;130m 34 
+ 35 [m[36mdonibble[m:
+[38;5;130m 36 [m[8C[36mpush[m %[36mebp[m
+[38;5;130m 37 [m[8C[36mmov[m %[36mesp[m, %[36mebp[m
+[38;5;130m 38 [m[8C[36msub[m $[31m16[m, %[36mesp[m
+[38;5;130m 39 [m[8C[36mmovl[m [31m8[m(%[36mebp[m), %[36meax[m
+[38;5;130m 40 [m[8C[36mxor[m %[36meax[m, %[36meax[m
+[38;5;130m 41 [m[8C[36mmovb[m %[36mal[m, -[31m4[m(%[36mebp[m)      [34m# char passed into function[m
+[38;5;130m 42 [m[8C[36mmovl[m $[31m4[m, -[31m12[m(%[36mebp[m)      [34m# -12(%ebp) holds the counter for the loop[m
+[38;5;130m 43 [m[8C[36mmovl[m $[31m3[m, -[31m16[m(%[36mebp[m)      [34m# -16(%ebp) hold the number of the right shift[m
+[38;5;130m 44 [m[8C[36mjmp[m [36mloop1[m[45;143H1,1[11CTop[1;5H[?12l[?25h[?25l[45;1H[K[45;1H:[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l"printbin.s" 62L, 1538C written
+[?1l>[?12l[?25h[?1049ljmallen@itserver6:~/cs341/mp2$ echo When you add more then 100 chat[Krs it causes the program to crash. possibly because the pr[K[Kthe string terminating char is not in  the appropriate spot >> printbin.script 
+jmallen@itserver6:~/cs341/mp2$ clear
+[3;J[H[2Jjmallen@itserver6:~/cs341/mp2$ echo when you use more then 100 chars[K's i the [K[K[K[K[Kn the argument string, the program ch[Krashes. I [K[KPossible because it c[Kdous[K[Kes not encounter the te rminating string charache[K[K[K[Kacter >> printbin.script
+> ^C
+jmallen@itserver6:~/cs341/mp2$ clear
+[3;J[H[2Jjmallen@itserver6:~/cs341/mp2$ ls
+a.out	    count.opc	       echoc.opc       index.html     printbin3.s    printbin.s		   strcpyc.c	strcpy.syms	  typescript
+count	    count.s	       echo.lnx        johna_tutor    printbinc.c    printbin.script	   strcpyc.o	strcpy_vm.script  Untitled Document
+countc.c    count.script       echo.opc        makefile       printbinc.o    printbin.syms	   strcpyc.opc	strycpy.script	  warmup
+countc.o    count.syms	       echo.s	       mp2.pdf	      printbinc.opc  printbin_ulab.script  strcpy.lnx	sum10c.c	  xxx_vm.script
+countc.opc  count_ulab.script  echo.script     mp2warmup.pdf  printbin.lnx   printbin_vm.script    strcpy.o	sum10.s
+count.lnx   count_vm.script    echo.syms       printbin       printbin.o     Rubric.docx	   strcpy.opc	sum10.script
+count.o     echoc.c	       echo_vm.script  printbin2.s    printbin.opc   strcpy2.s		   strcpy.s	syms
+jmallen@itserver6:~/cs341/mp2$ clear
+[3;J[H[2Jjmallen@itserver6:~/cs341/mp2$ clear[3Plsclearecho when you use more then 100 char's in the argument string, the program crashes. Possible because it does not encounter the terrminating string character >> printbin.script[Aclear[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cecho When you add more then 100 chars it causes the program to crash. possibly because the the string terminating char is not in tthe appropriate spot >> printbin.script [Avi printbin.s[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript printbin.scriptclear[Kgdb printbin[8Pexitvi printbin.script clear[Kgdb printbin[8Pexitgdb printbinb printbin.s:36exit[Kgdb printbin[8Pexitgdb count[5Pexitgdb count -tuiexit[Kcleargdb count -tuiexit[Krlogin ulab[6Pclearvi echo.sls[Kclearrlogin ulab vi makefile[C[7Pclearrlogin ulabvi strcpy.s[B[K[K[K[K[K[K[K[K[K[K[K[K[Kexit

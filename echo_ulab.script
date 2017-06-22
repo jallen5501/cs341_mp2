@@ -1,0 +1,89 @@
+Script started on Sun Oct 16 19:53:44 2016
+warning: could not update utmp entry
+sh: using dumb terminal settings.
+blade57(1)% pwd
+/courses/cs341/f16/bobw/jmallen/mp2
+blade57(2)% ls -lg
+total 354
+-rw-r--r--   1 jmallen  cs341-1G    13046 Sep 25 17:25 Rubric.docx
+-rwxr-xr-x   1 jmallen  cs341-1G     8752 Oct 12 21:14 count
+-rw-r--r--   1 jmallen  cs341-1G      846 Oct 13 12:11 count.s
+-rw-r--r--   1 jmallen  cs341-1G     4562 Oct 13 13:28 count_ulab.script
+-rw-r--r--   1 jmallen  cs341-1G    20480 Oct 13 14:32 count_vm.script
+-rw-r--r--   1 jmallen  cs341-1G      400 Oct 10 17:15 countc.c
+-rwxr-xr-x   1 jmallen  cs341-1G    29127 Oct 13 15:35 echo.lnx
+-rw-r--r--   1 jmallen  cs341-1G      202 Oct 13 15:35 echo.opc
+-rw-r--r--   1 jmallen  cs341-1G      681 Oct 13 15:31 echo.s
+-rw-r--r--   1 jmallen  cs341-1G     1776 Oct 13 15:35 echo.syms
+-rw-r--r--   1 jmallen  cs341-1G        0 Oct 13 15:40 echo_ulab.script
+-rw-r--r--   1 jmallen  cs341-1G      713 Oct 12 20:59 echoc.c
+-rw-r--r--   1 jmallen  cs341-1G     4009 Oct 13 15:35 echoc.opc
+-rw-r--r--   1 jmallen  cs341-1G    17305 Sep 25 17:25 index.html
+-rw-r--r--   1 jmallen  cs341-1G    12224 Oct 13 13:07 johna_tutor
+-rw-r--r--   1 jmallen  cs341-1G     2173 Oct 13 12:18 makefile
+-rw-r--r--   1 jmallen  cs341-1G    75101 Sep 25 17:25 mp2.pdf
+-rw-r--r--   1 jmallen  cs341-1G    92987 Sep 25 17:25 mp2warmup.pdf
+-rwxr-xr-x   1 jmallen  cs341-1G     8792 Oct 13 13:56 printbin
+-rw-r--r--   1 jmallen  cs341-1G     1540 Oct 13 12:14 printbin.s
+-rw-r--r--   1 jmallen  cs341-1G     8969 Oct 13 15:42 printbin.script
+-rw-r--r--   1 jmallen  cs341-1G      911 Oct 12 15:25 printbin2.s
+-rw-r--r--   1 jmallen  cs341-1G     1086 Oct 12 19:46 printbin3.s
+-rw-r--r--   1 jmallen  cs341-1G     4942 Oct 13 15:12 printbin_ulab.script
+-rw-r--r--   1 jmallen  cs341-1G    20480 Oct 13 14:32 printbin_vm.script
+-rw-r--r--   1 jmallen  cs341-1G      343 Oct 11 21:35 printbinc.c
+-rw-r--r--   1 jmallen  cs341-1G      492 Oct 13 12:16 strcpy.s
+-rw-r--r--   1 jmallen  cs341-1G      289 Oct 13 01:55 strcpy2.s
+-rw-r--r--   1 jmallen  cs341-1G     4048 Oct 13 13:32 strcpy_ulab.script
+-rw-r--r--   1 jmallen  cs341-1G      689 Oct 13 14:32 strcpy_vm.script
+-rw-r--r--   1 jmallen  cs341-1G      633 Oct 13 01:48 strcpyc.c
+-rw-r--r--   1 jmallen  cs341-1G    12024 Oct 13 12:49 typescript
+drwxr-sr-x   2 jmallen  cs341-1G      512 Oct 10 14:08 warmup
+blade57(3)% make A="echo"
+make: `echo.lnx' is up to date.
+blade57(4)% cat echo.s
+.text
+.globl _echo
+_echo:
+        pushl %ebp
+        movl %esp, %ebp
+        subl $8, %esp
+        movb 12(%ebp), %bl      #escape character argument
+        movl 8(%ebp), %edx      #move the comport pointer to edx
+
+        xorl %ecx, %ecx
+        movb $0xfc, %dl
+        inb (%dx), %al
+        orb $0x03, %al
+        outb %al, (%dx)
+        movb $0xfe, %dl  
+loop1:
+        inb (%dx), %al  
+        andb $0xb0, %al  
+        xorb $0xb0, %al  
+        jnz loop1
+loop2:
+        movl $0xfd, %dl 
+        inb (%dx), %al  
+        andb $0x01, %al 
+        jz loop2                
+        movl $0xf8, %dl 
+        inb (%dx), %al  
+        movb %al, %al   
+        cmpb %cl, %bl
+        je return
+        movb $0xfd, %dl 
+type:
+        inb (%dx), %al  
+        andb $0x20, %al
+        jz loop2                
+        movzbl %dl, %eax        
+        movl $0xf8, %edx        
+        outb %al, (%dx) 
+        jmp loop2
+return:
+        mov %ebp, %esp
+        popl %ebp
+        ret
+        .end
+blade57(5)% exit
+script done on Sun Oct 16 19:55:55 2016
